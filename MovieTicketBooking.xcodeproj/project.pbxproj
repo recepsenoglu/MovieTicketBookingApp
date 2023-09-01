@@ -13,6 +13,11 @@
 		CE57E4172AA225DF006A822F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE57E4152AA225DF006A822F /* Main.storyboard */; };
 		CE57E4192AA225E1006A822F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE57E4182AA225E1006A822F /* Assets.xcassets */; };
 		CE57E41C2AA225E1006A822F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE57E41A2AA225E1006A822F /* LaunchScreen.storyboard */; };
+		CEE7CA1A2AA2529F00A33948 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA192AA2529F00A33948 /* Slide.swift */; };
+		CEE7CA1C2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */; };
+		CEE7CA1E2AA26B8300A33948 /* VC_Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */; };
+		CEEA3A322AA24F9500A25003 /* CVCell_Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3A302AA24F9500A25003 /* CVCell_Onboarding.swift */; };
+		CEEA3A332AA24F9500A25003 /* CVCell_Onboarding.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3A312AA24F9500A25003 /* CVCell_Onboarding.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		CE57E4182AA225E1006A822F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE57E41B2AA225E1006A822F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE57E41D2AA225E1006A822F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE7CA192AA2529F00A33948 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFlowLayout_Onboarding.swift; sourceTree = "<group>"; };
+		CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_Home.swift; sourceTree = "<group>"; };
+		CEEA3A302AA24F9500A25003 /* CVCell_Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCell_Onboarding.swift; sourceTree = "<group>"; };
+		CEEA3A312AA24F9500A25003 /* CVCell_Onboarding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCell_Onboarding.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				CE57E4182AA225E1006A822F /* Assets.xcassets */,
 				CE57E41A2AA225E1006A822F /* LaunchScreen.storyboard */,
 				CE57E41D2AA225E1006A822F /* Info.plist */,
+				CEEA3A302AA24F9500A25003 /* CVCell_Onboarding.swift */,
+				CEEA3A312AA24F9500A25003 /* CVCell_Onboarding.xib */,
+				CEE7CA192AA2529F00A33948 /* Slide.swift */,
+				CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */,
+				CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */,
 			);
 			path = MovieTicketBooking;
 			sourceTree = "<group>";
@@ -126,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE57E41C2AA225E1006A822F /* LaunchScreen.storyboard in Resources */,
+				CEEA3A332AA24F9500A25003 /* CVCell_Onboarding.xib in Resources */,
 				CE57E4192AA225E1006A822F /* Assets.xcassets in Resources */,
 				CE57E4172AA225DF006A822F /* Main.storyboard in Resources */,
 			);
@@ -139,8 +155,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE57E4142AA225DF006A822F /* ViewController.swift in Sources */,
+				CEEA3A322AA24F9500A25003 /* CVCell_Onboarding.swift in Sources */,
 				CE57E4102AA225DF006A822F /* AppDelegate.swift in Sources */,
 				CE57E4122AA225DF006A822F /* SceneDelegate.swift in Sources */,
+				CEE7CA1A2AA2529F00A33948 /* Slide.swift in Sources */,
+				CEE7CA1C2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift in Sources */,
+				CEE7CA1E2AA26B8300A33948 /* VC_Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
