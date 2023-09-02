@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var cvSlides: UICollectionView!
     @IBOutlet weak var pcPage: UIPageControl!
@@ -15,13 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSkip: UIButton!
     
     // MARK: - Variables
-    var slides: [Slide] = []
+    private var slides: [Slide] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         cvSlides.register(UINib(nibName: "CVCell_Onboarding", bundle: nil), forCellWithReuseIdentifier: "CVCell_Onboarding")
         cvSlides.collectionViewLayout = CVFlowLayout_Onboarding()
+        navigationController?.setNavigationBarHidden(true, animated: false)
         loadSlides()
         editNextButton()
     }
@@ -31,7 +32,6 @@ class ViewController: UIViewController {
         let slide0 = Slide(image: "Onboarding0", title: "Easy Ticket Booking", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sodales ante. Morbi venenatis elit sit amet facilisis molestie. Nam accumsan urna lorem, vitae ornare lectus eleifend ac.")
         let slide1 = Slide(image: "Onboarding1", title: "Online Payment", text: slide0.text)
         let slide2 = Slide(image: "Onboarding2", title: "Enjoy Watching!", text: slide0.text)
-        
         slides.append(contentsOf: [slide0, slide1, slide2])
     }
     
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     func goToHomeView() {
         let vcHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VC_Home") as! VC_Home
-        present(vcHome, animated: true)
+        navigationController?.pushViewController(vcHome, animated: true)
     }
     
     @IBAction func btnNext_TUI(_ sender: Any) {

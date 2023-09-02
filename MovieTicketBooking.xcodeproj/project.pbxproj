@@ -16,6 +16,12 @@
 		CEE7CA1A2AA2529F00A33948 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA192AA2529F00A33948 /* Slide.swift */; };
 		CEE7CA1C2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */; };
 		CEE7CA1E2AA26B8300A33948 /* VC_Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */; };
+		CEE7CA212AA34A9B00A33948 /* CVCell_Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1F2AA34A9B00A33948 /* CVCell_Movie.swift */; };
+		CEE7CA222AA34A9B00A33948 /* CVCell_Movie.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7CA202AA34A9B00A33948 /* CVCell_Movie.xib */; };
+		CEE7CA242AA35C1300A33948 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA232AA35C1300A33948 /* Movie.swift */; };
+		CEE7CA262AA365A000A33948 /* CVFlowLayout_Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA252AA365A000A33948 /* CVFlowLayout_Movies.swift */; };
+		CEE7CA292AA3B66A00A33948 /* CVCell_UpcomingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA272AA3B66A00A33948 /* CVCell_UpcomingMovie.swift */; };
+		CEE7CA2A2AA3B66A00A33948 /* CVCell_UpcomingMovie.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7CA282AA3B66A00A33948 /* CVCell_UpcomingMovie.xib */; };
 		CEEA3A322AA24F9500A25003 /* CVCell_Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3A302AA24F9500A25003 /* CVCell_Onboarding.swift */; };
 		CEEA3A332AA24F9500A25003 /* CVCell_Onboarding.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3A312AA24F9500A25003 /* CVCell_Onboarding.xib */; };
 /* End PBXBuildFile section */
@@ -32,6 +38,12 @@
 		CEE7CA192AA2529F00A33948 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFlowLayout_Onboarding.swift; sourceTree = "<group>"; };
 		CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_Home.swift; sourceTree = "<group>"; };
+		CEE7CA1F2AA34A9B00A33948 /* CVCell_Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCell_Movie.swift; sourceTree = "<group>"; };
+		CEE7CA202AA34A9B00A33948 /* CVCell_Movie.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCell_Movie.xib; sourceTree = "<group>"; };
+		CEE7CA232AA35C1300A33948 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CEE7CA252AA365A000A33948 /* CVFlowLayout_Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFlowLayout_Movies.swift; sourceTree = "<group>"; };
+		CEE7CA272AA3B66A00A33948 /* CVCell_UpcomingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCell_UpcomingMovie.swift; sourceTree = "<group>"; };
+		CEE7CA282AA3B66A00A33948 /* CVCell_UpcomingMovie.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCell_UpcomingMovie.xib; sourceTree = "<group>"; };
 		CEEA3A302AA24F9500A25003 /* CVCell_Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCell_Onboarding.swift; sourceTree = "<group>"; };
 		CEEA3A312AA24F9500A25003 /* CVCell_Onboarding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCell_Onboarding.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +90,12 @@
 				CEE7CA192AA2529F00A33948 /* Slide.swift */,
 				CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */,
 				CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */,
+				CEE7CA1F2AA34A9B00A33948 /* CVCell_Movie.swift */,
+				CEE7CA202AA34A9B00A33948 /* CVCell_Movie.xib */,
+				CEE7CA232AA35C1300A33948 /* Movie.swift */,
+				CEE7CA252AA365A000A33948 /* CVFlowLayout_Movies.swift */,
+				CEE7CA272AA3B66A00A33948 /* CVCell_UpcomingMovie.swift */,
+				CEE7CA282AA3B66A00A33948 /* CVCell_UpcomingMovie.xib */,
 			);
 			path = MovieTicketBooking;
 			sourceTree = "<group>";
@@ -141,9 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE57E41C2AA225E1006A822F /* LaunchScreen.storyboard in Resources */,
+				CEE7CA222AA34A9B00A33948 /* CVCell_Movie.xib in Resources */,
 				CEEA3A332AA24F9500A25003 /* CVCell_Onboarding.xib in Resources */,
 				CE57E4192AA225E1006A822F /* Assets.xcassets in Resources */,
 				CE57E4172AA225DF006A822F /* Main.storyboard in Resources */,
+				CEE7CA2A2AA3B66A00A33948 /* CVCell_UpcomingMovie.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,9 +176,13 @@
 			files = (
 				CE57E4142AA225DF006A822F /* ViewController.swift in Sources */,
 				CEEA3A322AA24F9500A25003 /* CVCell_Onboarding.swift in Sources */,
+				CEE7CA242AA35C1300A33948 /* Movie.swift in Sources */,
+				CEE7CA262AA365A000A33948 /* CVFlowLayout_Movies.swift in Sources */,
+				CEE7CA292AA3B66A00A33948 /* CVCell_UpcomingMovie.swift in Sources */,
 				CE57E4102AA225DF006A822F /* AppDelegate.swift in Sources */,
 				CE57E4122AA225DF006A822F /* SceneDelegate.swift in Sources */,
 				CEE7CA1A2AA2529F00A33948 /* Slide.swift in Sources */,
+				CEE7CA212AA34A9B00A33948 /* CVCell_Movie.swift in Sources */,
 				CEE7CA1C2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift in Sources */,
 				CEE7CA1E2AA26B8300A33948 /* VC_Home.swift in Sources */,
 			);
