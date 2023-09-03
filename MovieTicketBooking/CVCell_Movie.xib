@@ -20,6 +20,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZCF-Hj-SVZ">
                         <rect key="frame" x="0.0" y="0.0" width="170" height="226.66666666666666"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ZCF-Hj-SVZ" secondAttribute="height" multiplier="3:4" id="8Lb-xN-pKA"/>
                         </constraints>

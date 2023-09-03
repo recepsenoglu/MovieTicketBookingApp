@@ -34,25 +34,50 @@ enum ContentRating: String {
 struct Movie {
     var image: UIImage
     var title: String
-    var description: String
-    var showingDate: Date
-    var time: Int
+    var filmReview: String
+    var releaseDate: Date
+    var duration: Int
     var genres: [Genre]
     var contentRating: ContentRating
     var director: String
     var cast: [String]
     var star: Int
     
-    init(imageAssetName image: String, title: String, description: String, showingDate: Date, time: Int, genres: [Genre], contentRating: ContentRating, director: String, cast: [String], star: Int) {
+    init(imageAssetName image: String, title: String, filmReview: String, releaseDate: Date, duration: Int, genres: [Genre], contentRating: ContentRating, director: String, cast: [String], star: Int) {
         self.image = UIImage(named: image)!
         self.title = title
-        self.description = description
-        self.showingDate = showingDate
-        self.time = time
+        self.filmReview = filmReview
+        self.releaseDate = releaseDate
+        self.duration = duration
         self.genres = genres
         self.contentRating = contentRating
         self.director = director
         self.cast = cast
         self.star = star
+    }
+    
+    func durationString() -> String {
+        let hour: Int = Int(floor(Double(duration) / 60))
+        let minute: Int = duration - hour * 60
+        let hourStr = minute > 0 ? "Hr." : hour > 1 ? "Hours" : "Hour"
+        return "\(hour) \(hourStr) \(minute > 0 ? "\(minute) Min." : "")"
+    }
+    
+    func releaseDateString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: releaseDate)
+    }
+    
+    func genresString() -> String {
+        var first3Genres: [String] = []
+        for i in 0..<(genres.count > 2 ? 3 : genres.count) {
+            first3Genres.append(genres[i].rawValue)
+        }
+        return first3Genres.joined(separator: ", ")
+    }
+    
+    func getCast() -> String {
+        return cast.joined(separator: ", ")
     }
 }

@@ -17,13 +17,22 @@ class CVCell_Movie: UICollectionViewCell {
     @IBOutlet weak var ivStar3: UIImageView!
     @IBOutlet weak var ivStar4: UIImageView!
     
+    // MARK: - Variables
+    public var onTap: ()->() = {
+        print("Clicked")
+    }
+    
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(callFunction)))
     }
     
     // MARK: - Functions
+    @objc func callFunction() {
+        onTap()
+    }
+    
     func setStars(_ star: Int) {
         for i in 0..<star {
             let keyPath = "ivStar\(i)"
