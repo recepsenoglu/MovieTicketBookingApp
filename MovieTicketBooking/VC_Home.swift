@@ -37,9 +37,7 @@ final class VC_Home: UIViewController {
     
     // MARK: - Functions
     func loadMovies() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        var theBatmanMovie = Movie(imageAssetName: "TheBatman", title: "The Batman (2022)", filmReview: "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.", releaseDate: formatter.date(from: "2022/03/04")!, duration: 176, genres: [Genre.Action, Genre.Crime], contentRating: ContentRating.PG13, director: "Matt Reeves", cast: [ "Robert Pattinson", "Zoë Kravitz", "Jeffrey Wright", "Colin Farrell", "Paul Dano"], star: 4)
+        var theBatmanMovie = Movie(imageAssetName: "TheBatman", title: "The Batman (2022)", filmReview: "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.", releaseDate: "04/03/2022".toDate(), duration: 176, genres: [Genre.Action, Genre.Crime], contentRating: ContentRating.PG13, director: "Matt Reeves", cast: [ "Robert Pattinson", "Zoë Kravitz", "Jeffrey Wright", "Colin Farrell", "Paul Dano"], star: 4)
         
         movies.append(contentsOf: [theBatmanMovie, theBatmanMovie, theBatmanMovie, theBatmanMovie])
         theBatmanMovie.title = "Showin"

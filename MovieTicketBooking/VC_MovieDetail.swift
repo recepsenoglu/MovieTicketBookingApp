@@ -27,12 +27,7 @@ class VC_MovieDetail: UIViewController {
         super.viewDidLoad()
         initMovie()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let backButton = UIBarButtonItem(title: "Custom Back", style: .plain, target: nil, action: nil)
-    }
-    
+        
     // MARK: - Functions
     func initMovie() {
         guard movie != nil else { return }
@@ -47,6 +42,14 @@ class VC_MovieDetail: UIViewController {
         lblCast.text = movie!.getCast()
     }
     
+    func goToSessionView(_ movie: Movie) {
+        let vcSession = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VC_Session") as! VC_Session
+        vcSession.movie = movie
+        navigationController?.pushViewController(vcSession, animated: true)
+    }
+    
     @IBAction func btnBookTickets_TUI(_ sender: Any) {
+        guard movie != nil else { return }
+        goToSessionView(movie!)
     }
 }

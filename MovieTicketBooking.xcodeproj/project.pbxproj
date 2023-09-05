@@ -18,6 +18,16 @@
 		CE64EC0F2AA48F2B002FED5F /* CVCell_Movie2.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE64EC0D2AA48F2A002FED5F /* CVCell_Movie2.xib */; };
 		CE64EC112AA4AE8F002FED5F /* CVFlowLayout_AllMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC102AA4AE8F002FED5F /* CVFlowLayout_AllMovies.swift */; };
 		CE64EC132AA510D3002FED5F /* VC_MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC122AA510D3002FED5F /* VC_MovieDetail.swift */; };
+		CE64EC152AA5BDEA002FED5F /* VC_Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC142AA5BDEA002FED5F /* VC_Session.swift */; };
+		CE64EC172AA6217C002FED5F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC162AA6217C002FED5F /* Day.swift */; };
+		CE64EC192AA625CA002FED5F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC182AA625CA002FED5F /* extensions.swift */; };
+		CE64EC1C2AA6306C002FED5F /* CVCell_Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC1A2AA6306C002FED5F /* CVCell_Day.swift */; };
+		CE64EC1D2AA6306C002FED5F /* CVCell_Day.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE64EC1B2AA6306C002FED5F /* CVCell_Day.xib */; };
+		CE64EC1F2AA637DD002FED5F /* CVFlowLayout_Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC1E2AA637DD002FED5F /* CVFlowLayout_Days.swift */; };
+		CE64EC222AA70DFA002FED5F /* TVCell_Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC202AA70DFA002FED5F /* TVCell_Hour.swift */; };
+		CE64EC232AA70DFA002FED5F /* TVCell_Hour.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE64EC212AA70DFA002FED5F /* TVCell_Hour.xib */; };
+		CE64EC252AA71C1D002FED5F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC242AA71C1D002FED5F /* Alert.swift */; };
+		CE64EC272AA72C29002FED5F /* VC_Seats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC262AA72C29002FED5F /* VC_Seats.swift */; };
 		CEE7CA1A2AA2529F00A33948 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA192AA2529F00A33948 /* Slide.swift */; };
 		CEE7CA1C2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */; };
 		CEE7CA1E2AA26B8300A33948 /* VC_Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */; };
@@ -45,6 +55,16 @@
 		CE64EC0D2AA48F2A002FED5F /* CVCell_Movie2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCell_Movie2.xib; sourceTree = "<group>"; };
 		CE64EC102AA4AE8F002FED5F /* CVFlowLayout_AllMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFlowLayout_AllMovies.swift; sourceTree = "<group>"; };
 		CE64EC122AA510D3002FED5F /* VC_MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MovieDetail.swift; sourceTree = "<group>"; };
+		CE64EC142AA5BDEA002FED5F /* VC_Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_Session.swift; sourceTree = "<group>"; };
+		CE64EC162AA6217C002FED5F /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		CE64EC182AA625CA002FED5F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		CE64EC1A2AA6306C002FED5F /* CVCell_Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCell_Day.swift; sourceTree = "<group>"; };
+		CE64EC1B2AA6306C002FED5F /* CVCell_Day.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCell_Day.xib; sourceTree = "<group>"; };
+		CE64EC1E2AA637DD002FED5F /* CVFlowLayout_Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFlowLayout_Days.swift; sourceTree = "<group>"; };
+		CE64EC202AA70DFA002FED5F /* TVCell_Hour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCell_Hour.swift; sourceTree = "<group>"; };
+		CE64EC212AA70DFA002FED5F /* TVCell_Hour.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCell_Hour.xib; sourceTree = "<group>"; };
+		CE64EC242AA71C1D002FED5F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		CE64EC262AA72C29002FED5F /* VC_Seats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_Seats.swift; sourceTree = "<group>"; };
 		CEE7CA192AA2529F00A33948 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFlowLayout_Onboarding.swift; sourceTree = "<group>"; };
 		CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_Home.swift; sourceTree = "<group>"; };
@@ -111,6 +131,16 @@
 				CE64EC0D2AA48F2A002FED5F /* CVCell_Movie2.xib */,
 				CE64EC102AA4AE8F002FED5F /* CVFlowLayout_AllMovies.swift */,
 				CE64EC122AA510D3002FED5F /* VC_MovieDetail.swift */,
+				CE64EC142AA5BDEA002FED5F /* VC_Session.swift */,
+				CE64EC162AA6217C002FED5F /* Day.swift */,
+				CE64EC182AA625CA002FED5F /* extensions.swift */,
+				CE64EC1A2AA6306C002FED5F /* CVCell_Day.swift */,
+				CE64EC1B2AA6306C002FED5F /* CVCell_Day.xib */,
+				CE64EC1E2AA637DD002FED5F /* CVFlowLayout_Days.swift */,
+				CE64EC202AA70DFA002FED5F /* TVCell_Hour.swift */,
+				CE64EC212AA70DFA002FED5F /* TVCell_Hour.xib */,
+				CE64EC242AA71C1D002FED5F /* Alert.swift */,
+				CE64EC262AA72C29002FED5F /* VC_Seats.swift */,
 			);
 			path = MovieTicketBooking;
 			sourceTree = "<group>";
@@ -177,7 +207,9 @@
 				CE57E41C2AA225E1006A822F /* LaunchScreen.storyboard in Resources */,
 				CEE7CA222AA34A9B00A33948 /* CVCell_Movie.xib in Resources */,
 				CEEA3A332AA24F9500A25003 /* CVCell_Onboarding.xib in Resources */,
+				CE64EC232AA70DFA002FED5F /* TVCell_Hour.xib in Resources */,
 				CE57E4192AA225E1006A822F /* Assets.xcassets in Resources */,
+				CE64EC1D2AA6306C002FED5F /* CVCell_Day.xib in Resources */,
 				CE57E4172AA225DF006A822F /* Main.storyboard in Resources */,
 				CEE7CA2A2AA3B66A00A33948 /* CVCell_UpcomingMovie.xib in Resources */,
 			);
@@ -195,15 +227,23 @@
 				CE64EC0E2AA48F2A002FED5F /* CVCell_Movie2.swift in Sources */,
 				CE64EC112AA4AE8F002FED5F /* CVFlowLayout_AllMovies.swift in Sources */,
 				CEEA3A322AA24F9500A25003 /* CVCell_Onboarding.swift in Sources */,
+				CE64EC192AA625CA002FED5F /* extensions.swift in Sources */,
+				CE64EC272AA72C29002FED5F /* VC_Seats.swift in Sources */,
 				CEE7CA242AA35C1300A33948 /* Movie.swift in Sources */,
 				CEE7CA262AA365A000A33948 /* CVFlowLayout_Movies.swift in Sources */,
+				CE64EC252AA71C1D002FED5F /* Alert.swift in Sources */,
+				CE64EC152AA5BDEA002FED5F /* VC_Session.swift in Sources */,
 				CE64EC132AA510D3002FED5F /* VC_MovieDetail.swift in Sources */,
 				CEE7CA292AA3B66A00A33948 /* CVCell_UpcomingMovie.swift in Sources */,
 				CE57E4102AA225DF006A822F /* AppDelegate.swift in Sources */,
+				CE64EC1C2AA6306C002FED5F /* CVCell_Day.swift in Sources */,
+				CE64EC1F2AA637DD002FED5F /* CVFlowLayout_Days.swift in Sources */,
+				CE64EC172AA6217C002FED5F /* Day.swift in Sources */,
 				CE57E4122AA225DF006A822F /* SceneDelegate.swift in Sources */,
 				CEE7CA1A2AA2529F00A33948 /* Slide.swift in Sources */,
 				CEE7CA212AA34A9B00A33948 /* CVCell_Movie.swift in Sources */,
 				CEE7CA1C2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift in Sources */,
+				CE64EC222AA70DFA002FED5F /* TVCell_Hour.swift in Sources */,
 				CEE7CA1E2AA26B8300A33948 /* VC_Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
