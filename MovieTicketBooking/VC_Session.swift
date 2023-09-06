@@ -107,6 +107,11 @@ extension VC_Session: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedDay = days[indexPath.row]
+        cvDays.reloadData()
+    }
 }
 
 extension VC_Session: UITableViewDelegate, UITableViewDataSource {
