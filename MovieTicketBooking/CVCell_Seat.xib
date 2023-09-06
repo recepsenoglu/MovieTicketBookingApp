@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CVCell_Seat" customModule="MovieTicketBooking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-3S-Kwc">
+                        <rect key="frame" x="0.0" y="2" width="25" height="21.333333333333332"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="rk0-3S-Kwc" secondAttribute="height" multiplier="1:1" id="ozk-cf-Dw4"/>
+                        </constraints>
+                        <imageReference key="image" image="chair.lounge.fill" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color systemColor="labelColor"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="rk0-3S-Kwc" secondAttribute="trailing" id="3nN-Qk-sJO"/>
+                <constraint firstAttribute="bottom" secondItem="rk0-3S-Kwc" secondAttribute="bottom" id="7Hz-71-9Gk"/>
+                <constraint firstItem="rk0-3S-Kwc" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="oHL-Mx-552"/>
+                <constraint firstItem="rk0-3S-Kwc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ykL-vS-ZVD"/>
+            </constraints>
+            <size key="customSize" width="78" height="79"/>
+            <connections>
+                <outlet property="ivImage" destination="rk0-3S-Kwc" id="hCI-fh-H2r"/>
+            </connections>
+            <point key="canvasLocation" x="98.473282442748086" y="29.929577464788736"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="chair.lounge.fill" catalog="system" width="128" height="103"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
