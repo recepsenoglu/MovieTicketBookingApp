@@ -50,10 +50,7 @@ class VC_Seats: UIViewController {
     }
     
     func setSelectedSeats() {
-        let selectedSeatCodes = getSelectedSeats().map({seat in
-            return seat.getSeatCode()
-        })
-        lblSelectedSeats.text = selectedSeatCodes.joined(separator: ", ")
+        lblSelectedSeats.text = getSelectedSeatCodes()
     }
     
     func setPrice(_ price: Double) {
@@ -66,6 +63,18 @@ class VC_Seats: UIViewController {
     
     func getSelectedSeats()->[Seat] {
         return seats.filter({ $0.selected })
+    }
+    
+    func getSelectedSeatCodes()->String {
+        let selectedSeatCodes = getSelectedSeats().map({seat in
+            return seat.getSeatCode()
+        })
+        return selectedSeatCodes.joined(separator: ", ")
+    }
+    
+    func getTotalPrice()->Double {
+        let seatCount: Int = getSelectedSeats().count
+        return Double(seatCount) * 20.0
     }
     
     func getSeatIndex(_ indexPath: IndexPath)-> Int {
@@ -84,7 +93,7 @@ class VC_Seats: UIViewController {
         seats[index].coord.printCoords()
         seats[index].selected = !seats[index].selected
         let seatCount: Int = getSelectedSeats().count
-        let price: Double = Double(seatCount) * 20.0
+        let price: Double = getTotalPrice()
         setTickets(seatCount)
         setPrice(price)
         setSelectedSeats()
@@ -95,7 +104,13 @@ class VC_Seats: UIViewController {
         if getSelectedSeats().count == 0 {
             self.showToast(message: "Please choose at least 1 seat")
         } else {
-            // go to ticket page
+            let vcTicket = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VC_Ticket") as! VC_Ticket
+            vcTicket.movie = movie
+            vcTicket.day = day
+            vcTicket.hour = hour
+            vcTicket.seats = getSelectedSeatCodes()
+            vcTicket.price = getTotalPrice()
+            navigationController?.pushViewController(vcTicket, animated: true)
         }
     }
     

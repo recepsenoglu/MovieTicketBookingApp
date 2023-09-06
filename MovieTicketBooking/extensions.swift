@@ -33,9 +33,17 @@ extension Date {
         return calendar.component(.day, from: self)
     }
     
+    func getDayName()-> String {
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: self)
+        return days[weekday-1]
+    }
+    
     func futureDate(daysToAdd: Int)->Date {
         let today = Date()
         let calendar = Calendar.current
         return calendar.date(byAdding: .day, value: daysToAdd, to: today)!
     }
 }
+
+let days: [String] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]

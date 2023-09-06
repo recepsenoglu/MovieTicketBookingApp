@@ -32,6 +32,7 @@
 		CE64EC2C2AA78F3A002FED5F /* CVCell_Seat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC2A2AA78F3A002FED5F /* CVCell_Seat.swift */; };
 		CE64EC2D2AA78F3A002FED5F /* CVCell_Seat.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE64EC2B2AA78F3A002FED5F /* CVCell_Seat.xib */; };
 		CE64EC2F2AA791D0002FED5F /* CVFlowLayout_Seats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC2E2AA791D0002FED5F /* CVFlowLayout_Seats.swift */; };
+		CE64EC312AA8A937002FED5F /* VC_Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64EC302AA8A937002FED5F /* VC_Ticket.swift */; };
 		CEE7CA1A2AA2529F00A33948 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA192AA2529F00A33948 /* Slide.swift */; };
 		CEE7CA1C2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */; };
 		CEE7CA1E2AA26B8300A33948 /* VC_Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */; };
@@ -73,6 +74,7 @@
 		CE64EC2A2AA78F3A002FED5F /* CVCell_Seat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCell_Seat.swift; sourceTree = "<group>"; };
 		CE64EC2B2AA78F3A002FED5F /* CVCell_Seat.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCell_Seat.xib; sourceTree = "<group>"; };
 		CE64EC2E2AA791D0002FED5F /* CVFlowLayout_Seats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFlowLayout_Seats.swift; sourceTree = "<group>"; };
+		CE64EC302AA8A937002FED5F /* VC_Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_Ticket.swift; sourceTree = "<group>"; };
 		CEE7CA192AA2529F00A33948 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		CEE7CA1B2AA2568E00A33948 /* CVFlowLayout_Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFlowLayout_Onboarding.swift; sourceTree = "<group>"; };
 		CEE7CA1D2AA26B8300A33948 /* VC_Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_Home.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				CE64EC2A2AA78F3A002FED5F /* CVCell_Seat.swift */,
 				CE64EC2B2AA78F3A002FED5F /* CVCell_Seat.xib */,
 				CE64EC2E2AA791D0002FED5F /* CVFlowLayout_Seats.swift */,
+				CE64EC302AA8A937002FED5F /* VC_Ticket.swift */,
 			);
 			path = MovieTicketBooking;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				CE64EC252AA71C1D002FED5F /* Alert.swift in Sources */,
 				CE64EC152AA5BDEA002FED5F /* VC_Session.swift in Sources */,
 				CE64EC132AA510D3002FED5F /* VC_MovieDetail.swift in Sources */,
+				CE64EC312AA8A937002FED5F /* VC_Ticket.swift in Sources */,
 				CE64EC2F2AA791D0002FED5F /* CVFlowLayout_Seats.swift in Sources */,
 				CEE7CA292AA3B66A00A33948 /* CVCell_UpcomingMovie.swift in Sources */,
 				CE57E4102AA225DF006A822F /* AppDelegate.swift in Sources */,

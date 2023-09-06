@@ -22,6 +22,10 @@ struct Day {
         return String(date.getDay())
     }
     
+    func getDateString()->String {
+        return "\(getDay()) \(getMonth()) \(date.getDayName())"
+    }
+    
     func isIdentical(_ otherDay: Day)->Bool {
         return date.toString() == otherDay.date.toString()
     }
