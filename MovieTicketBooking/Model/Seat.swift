@@ -11,11 +11,7 @@ struct Seat {
     var selected: Bool
     var sold: Bool
     var coord: SeatCoord
-    var id: String {
-        get {
-            return "(\(coord.section),\(coord.number))"
-        }
-    }
+    var id: String { get { "(\(coord.section),\(coord.number))" } }
     
     init(selected: Bool = false, sold: Bool = false, coord: SeatCoord) {
         self.selected = selected
@@ -23,13 +19,9 @@ struct Seat {
         self.coord = coord
     }
     
-    func isEqual(_ seat: Seat)->Bool {
-        return seat.id == self.id
-    }
+    func isEqual(_ seat: Seat)->Bool { seat.id == self.id }
     
-    func getSeatCode()->String {
-        return "\(sectionLetters[self.coord.section])\(self.coord.number + 1)"
-    }
+    func seatCode() -> String { "\(sectionLetters[self.coord.section])\(self.coord.number + 1)" }
 }
 
 struct SeatCoord {

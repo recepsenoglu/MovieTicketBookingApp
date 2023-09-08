@@ -43,8 +43,19 @@ struct Movie {
     var cast: [String]
     var star: Int
     
-    init(imageAssetName image: String, title: String, filmReview: String, releaseDate: Date, duration: Int, genres: [Genre], contentRating: ContentRating, director: String, cast: [String], star: Int) {
-        self.image = UIImage(named: image)!
+    init(
+        imageAssetName image: String,
+        title: String,
+        filmReview: String,
+        releaseDate: Date,
+        duration: Int,
+        genres: [Genre],
+        contentRating: ContentRating,
+        director: String,
+        cast: [String],
+        star: Int
+    ) {
+        self.image = UIImage(named: image) ?? UIImage(systemName: "photo")!
         self.title = title
         self.filmReview = filmReview
         self.releaseDate = releaseDate
@@ -77,7 +88,12 @@ struct Movie {
         return first3Genres.joined(separator: ", ")
     }
     
-    func getCast() -> String {
-        return cast.joined(separator: ", ")
+    func castList() -> NSAttributedString {
+        let castString = NSAttributedString(string: "Cast: ", attributes: [.font: UIFont.systemFont(ofSize: 17, weight: .medium)])
+        let list = NSAttributedString(string: cast.joined(separator: ", "), attributes: [.font: UIFont.systemFont(ofSize: 17)])
+        let castList = NSMutableAttributedString()
+        castList.append(castString)
+        castList.append(list)
+        return castList
     }
 }

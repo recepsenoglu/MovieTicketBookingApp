@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class VC_Ticket: UIViewController {
+final class TicketVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var lblMovieTitle: UILabel!
     @IBOutlet weak var lblSeats: UILabel!
@@ -43,7 +43,7 @@ final class VC_Ticket: UIViewController {
     }
     
     func goHomeView() {
-        let vcHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "VC_Home") as! VC_Home
+        let vcHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "HomeVC") as! HomeVC
         navigationController?.pushViewController(vcHome, animated: true)
     }
     

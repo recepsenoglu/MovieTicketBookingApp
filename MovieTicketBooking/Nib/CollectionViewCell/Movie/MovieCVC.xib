@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CVCell_Movie2" customModule="MovieTicketBooking" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieCVC" customModule="MovieTicketBooking" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="204" height="344"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -101,12 +101,12 @@
             </constraints>
             <size key="customSize" width="213" height="332"/>
             <connections>
-                <outlet property="ivImage" destination="pYG-cx-ufp" id="JUy-1j-4I4"/>
-                <outlet property="lblDuration" destination="zli-Ex-Sy4" id="7mL-8m-WUt"/>
-                <outlet property="lblGenres" destination="uxF-L2-vCe" id="YHe-qB-urD"/>
-                <outlet property="lblReleaseDate" destination="ABV-RJ-05d" id="4Wk-2v-UjL"/>
-                <outlet property="lblTitle" destination="RcP-XP-Xba" id="L6U-gc-GoB"/>
-                <outlet property="viewDate" destination="a44-yC-mPV" id="ivG-Jb-Nnm"/>
+                <outlet property="dateView" destination="a44-yC-mPV" id="f9T-Dj-UDT"/>
+                <outlet property="durationLabel" destination="zli-Ex-Sy4" id="eJ4-vt-bJt"/>
+                <outlet property="genresLabel" destination="uxF-L2-vCe" id="5CR-ai-B6d"/>
+                <outlet property="imageIV" destination="pYG-cx-ufp" id="vT8-BV-Fb5"/>
+                <outlet property="releaseDateLabel" destination="ABV-RJ-05d" id="kzX-9z-8h1"/>
+                <outlet property="titleLabel" destination="RcP-XP-Xba" id="dms-7v-Xid"/>
             </connections>
             <point key="canvasLocation" x="222.90076335877862" y="139.43661971830986"/>
         </collectionViewCell>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class VC_Session: UIViewController {
+final class ReservationVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var ivImage: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
@@ -75,7 +75,7 @@ final class VC_Session: UIViewController {
         if selectedHour == nil {
             self.showToast(message: "Please choose a session")
         } else {
-            let vcSeats = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "VC_Seats") as! VC_Seats
+            let vcSeats = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SeatsVC") as! SeatsVC
             vcSeats.movie = movie
             vcSeats.day = selectedDay!
             vcSeats.hour = selectedHour!
@@ -90,7 +90,7 @@ final class VC_Session: UIViewController {
 
 }
 
-extension VC_Session: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ReservationVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return days.count
     }
@@ -114,7 +114,7 @@ extension VC_Session: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 
-extension VC_Session: UITableViewDelegate, UITableViewDataSource {
+extension ReservationVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hours.count
     }

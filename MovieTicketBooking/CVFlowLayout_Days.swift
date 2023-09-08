@@ -22,8 +22,8 @@ class CVFlowLayout_Days: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         guard let collectionView = collectionView else { return }
-        var itemHeight = collectionView.bounds.height
-        var itemWidth = itemHeight
+        let itemHeight = collectionView.bounds.height
+        let itemWidth = itemHeight
         itemSize = CGSize(width: itemWidth, height: itemHeight)
     }
 }

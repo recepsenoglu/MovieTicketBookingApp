@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VC_Seats: UIViewController {
+class SeatsVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var cvSeats: UICollectionView!
     @IBOutlet weak var lblDateAndTime: UILabel!
@@ -66,9 +66,7 @@ class VC_Seats: UIViewController {
     }
     
     func getSelectedSeatCodes()->String {
-        let selectedSeatCodes = getSelectedSeats().map({seat in
-            return seat.getSeatCode()
-        })
+        let selectedSeatCodes = getSelectedSeats().map({seat in seat.seatCode() })
         return selectedSeatCodes.joined(separator: ", ")
     }
     
@@ -104,7 +102,7 @@ class VC_Seats: UIViewController {
         if getSelectedSeats().count == 0 {
             self.showToast(message: "Please choose at least 1 seat")
         } else {
-            let vcTicket = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VC_Ticket") as! VC_Ticket
+            let vcTicket = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TicketVC") as! TicketVC
             vcTicket.movie = movie
             vcTicket.day = day
             vcTicket.hour = hour
@@ -121,7 +119,7 @@ class VC_Seats: UIViewController {
     
 }
 
-extension VC_Seats: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SeatsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 9
     }

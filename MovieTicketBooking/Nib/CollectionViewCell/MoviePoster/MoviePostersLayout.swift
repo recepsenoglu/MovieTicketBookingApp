@@ -7,13 +7,13 @@
 
 import UIKit
 
-class CVFlowLayout_Movies: UICollectionViewFlowLayout {
-    var titleHeight: Double
-    var customInteritemSpacing: CGFloat = 10
-    var aspectRatio: Double = 3 / 4
+class MoviePostersLayout: UICollectionViewFlowLayout {
+    private var bottomHeight: Double
+    private var customInteritemSpacing: CGFloat = 10
+    private var aspectRatio: Double = 3 / 4
 
-    init(titleHeight: Double = 55, imageAspectRatio aspectRatio: Double = 3/4) {
-        self.titleHeight = titleHeight
+    init(bottomHeight: Double = 55, imageAspectRatio aspectRatio: Double = 3/4) {
+        self.bottomHeight = bottomHeight
         self.aspectRatio = aspectRatio
         super.init()
         scrollDirection = .horizontal
@@ -27,7 +27,7 @@ class CVFlowLayout_Movies: UICollectionViewFlowLayout {
         super.prepare()
         guard let collectionView = collectionView else { return }
         let itemHeight = collectionView.bounds.size.height
-        let imageHeight = itemHeight > titleHeight ? itemHeight - titleHeight : itemHeight
+        let imageHeight = itemHeight > bottomHeight ? itemHeight - bottomHeight : itemHeight
         let itemWidth = imageHeight * aspectRatio
         itemSize = CGSize(width: itemWidth, height: itemHeight)
         minimumInteritemSpacing = customInteritemSpacing

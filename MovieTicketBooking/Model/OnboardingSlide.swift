@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-struct Slide {
-    var image: UIImage
+struct OnboardingSlide{
+    var image: UIImage?
     var title: String
     var text: String
     
     init(image imageName: String, title: String, text: String) {
-        self.image = UIImage(named: imageName)!
+        self.image = UIImage(named: imageName)
         self.title = title
         self.text = text
     }
