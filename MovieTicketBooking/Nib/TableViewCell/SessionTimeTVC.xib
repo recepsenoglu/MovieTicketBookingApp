@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TVCell_Hour" customModule="MovieTicketBooking" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="KGk-i7-Jjw" customClass="SessionTimeTVC" customModule="MovieTicketBooking" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -20,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YHn-0K-DFg">
-                        <rect key="frame" x="284" y="12.999999999999998" width="20" height="18.666666666666664"/>
+                        <rect key="frame" x="285" y="12.999999999999998" width="20" height="18.666666666666664"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="cfz-Q5-RRN"/>
                             <constraint firstAttribute="height" constant="20" id="uWk-VW-pnD"/>
@@ -34,23 +33,28 @@
                         </imageReference>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZM-E3-aiB">
-                        <rect key="frame" x="16" y="11" width="38" height="22"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <rect key="frame" x="10" y="11" width="37" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="sZM-E3-aiB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="M1U-xy-Tjc"/>
-                    <constraint firstAttribute="trailing" secondItem="YHn-0K-DFg" secondAttribute="trailing" constant="16" id="NZR-VA-fpE"/>
+                    <constraint firstItem="sZM-E3-aiB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="M1U-xy-Tjc"/>
+                    <constraint firstAttribute="trailing" secondItem="YHn-0K-DFg" secondAttribute="trailing" constant="15" id="NZR-VA-fpE"/>
                     <constraint firstItem="YHn-0K-DFg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bEH-rS-tIA"/>
                     <constraint firstItem="sZM-E3-aiB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="f0R-We-4dh"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                        <integer key="value" value="10"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ivSelected" destination="YHn-0K-DFg" id="YcY-HZ-83X"/>
-                <outlet property="lblHour" destination="sZM-E3-aiB" id="VX8-As-BCL"/>
+                <outlet property="selectedIV" destination="YHn-0K-DFg" id="kgA-xH-Aib"/>
+                <outlet property="timeLabel" destination="sZM-E3-aiB" id="NBM-rf-4Sb"/>
             </connections>
             <point key="canvasLocation" x="67" y="20"/>
         </tableViewCell>

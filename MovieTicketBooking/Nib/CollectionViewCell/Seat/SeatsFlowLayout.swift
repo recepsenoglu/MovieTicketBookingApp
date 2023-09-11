@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CVFlowLayout_Seats: UICollectionViewFlowLayout {
+class SeatsFlowLayout: UICollectionViewFlowLayout {
     init(minimumInteritemSpacing: Double = 5, minimumLineSpacing: Double = 5) {
         super.init()
         self.minimumInteritemSpacing = CGFloat(minimumInteritemSpacing)

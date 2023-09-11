@@ -67,6 +67,10 @@ struct Movie {
         self.star = star
     }
     
+    func isIdentical(_ other: Movie) -> Bool {
+        return title == other.title && releaseDate.isSameDate(other.releaseDate) && director == other.director
+    }
+    
     func durationString() -> String {
         let hour: Int = Int(floor(Double(duration) / 60))
         let minute: Int = duration - hour * 60

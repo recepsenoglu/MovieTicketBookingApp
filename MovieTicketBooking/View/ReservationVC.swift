@@ -8,126 +8,111 @@
 import UIKit
 
 final class ReservationVC: UIViewController {
+    
     // MARK: - Outlets
-    @IBOutlet weak var ivImage: UIImageView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblDuration: UILabel!
-    @IBOutlet weak var lblContentRating: UILabel!
-    @IBOutlet weak var lblGenre: UILabel!
-    @IBOutlet weak var cvDays: UICollectionView!
+    
+    @IBOutlet weak private var imageIV: UIImageView!
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var durationLabel: UILabel!
+    @IBOutlet weak private var contentRatingLabel: UILabel!
+    @IBOutlet weak private var genreLabel: UILabel!
+    @IBOutlet weak private var sessionDaysCV: UICollectionView!
     
     // MARK: - Variables
-    public var movie: Movie?
-    private var days: [Day] = []
-    private var hours: [String] = []
-    private var selectedDay: Day?
-    private var selectedHour: String?
+    
+    var movie: Movie?
+    private var sessionDays: [Session] = []
+    private var selectedSession: Session?
+    private var sessionTimes: [String] = []
+    private var selectedTime: String?
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        cvDays.register(UINib(nibName: "CVCell_Day", bundle: nil), forCellWithReuseIdentifier: "CVCell_Day")
-        cvDays.collectionViewLayout = CVFlowLayout_Days()
+        setupSessionDaysCV()
         initMovie()
         initDays()
-        initHours()
+        initTimes()
     }
     
     // MARK: - Functions
-    func initMovie() {
-        guard movie != nil else { return }
-        ivImage.image = movie!.image
-        lblTitle.text = movie!.title
-        lblDuration.text = movie!.durationString()
-        lblContentRating.text = movie!.contentRating.rawValue
-        lblGenre.text = movie!.genresString()
+    
+    private func setupSessionDaysCV() {
+        sessionDaysCV.register(UINib(nibName: "SessionDayCVC", bundle: nil), forCellWithReuseIdentifier: "SessionDayCVC")
+        sessionDaysCV.collectionViewLayout = SessionDaysFlowLayout()
     }
     
-    func initDays() {
+    private func initMovie() {
+        guard let movie = movie else { return }
+        imageIV.image = movie.image
+        titleLabel.text = movie.title
+        durationLabel.text = movie.durationString()
+        contentRatingLabel.text = movie.contentRating.rawValue
+        genreLabel.text = movie.genresString()
+    }
+    
+    private func initDays() {
         let today = Date()
         for i in 0..<10 {
             let date = today.futureDate(daysToAdd: i)
-            let day: Day = Day(date: date)
-            days.append(day)
+            let day: Session = Session(date: date)
+            sessionDays.append(day)
         }
-        selectedDay = days.first
+        selectedSession = sessionDays.first
     }
     
-    func initHours() {
+    private func initTimes() {
         for i in 0..<10 {
             let remains = i % 2
             let hour = 9 + Int(floor(Double(i/2)))
             let minute = remains % 2 == 0 ? "00" : "30"
-            let time = "\(formatSingleDigitNumber(hour)):\(minute)"
-            hours.append(time)
+            let time = "\(hour.formatSingleDigitNumber()):\(minute)"
+            sessionTimes.append(time)
         }
     }
-    
-    func formatSingleDigitNumber(_ number: Int) -> String {
-        if number < 10 {
-            return "0\(number)"
-        } else {
-            return "\(number)"
-        }
-    }
-    
-    func goToChooseSeatsView() {
-        if selectedHour == nil {
-            self.showToast(message: "Please choose a session")
-        } else {
-            let vcSeats = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SeatsVC") as! SeatsVC
-            vcSeats.movie = movie
-            vcSeats.day = selectedDay!
-            vcSeats.hour = selectedHour!
-            navigationController?.pushViewController(vcSeats, animated: true)
-        }
-    }
-    
+        
     // MARK: - Actions
-    @IBAction func btnChooseSeats_TUI(_ sender: Any) {
-        goToChooseSeatsView()
+    
+    @IBAction private func btnChooseSeats_TUI(_ sender: Any) {
+        guard let selectedTime = selectedTime else {
+            self.showToast("Please choose a session")
+            return
+        }
+        let seatsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SeatsVC") as! SeatsVC
+        seatsVC.movie = movie
+        selectedSession?.time = selectedTime
+        seatsVC.session = selectedSession
+        navigationController?.pushViewController(seatsVC, animated: true)
     }
-
 }
 
 extension ReservationVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return days.count
-    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { sessionDays.count }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let day: Day = days[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CVCell_Day", for: indexPath) as! CVCell_Day
-        cell.lblMonth.text = day.getMonth()
-        cell.lblDay.text = day.getDay()
-        if day.isIdentical(selectedDay!) {
-            cell.selectDay()
-        } else {
-            cell.unSelectDay()
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SessionDayCVC", for: indexPath) as! SessionDayCVC
+        let sessionDay = sessionDays[indexPath.row]
+        cell.setupCell(session: sessionDay, selected: sessionDay.isIdentical(selectedSession))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedDay = days[indexPath.row]
-        cvDays.reloadData()
+        selectedSession = sessionDays[indexPath.row]
+        sessionDaysCV.reloadData()
     }
 }
 
 extension ReservationVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hours.count
-    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { sessionTimes.count }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let hour: String = hours[indexPath.row]
-        let cell = Bundle.main.loadNibNamed("TVCell_Hour", owner: self)?.first as! TVCell_Hour
-        cell.lblHour.text = hour
+        let cell = Bundle.main.loadNibNamed("SessionTimeTVC", owner: self)?.first as! SessionTimeTVC
+        cell.setupCell(time: sessionTimes[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let hour = hours[indexPath.row]
-        selectedHour = hour
+        selectedTime = sessionTimes[indexPath.row]
     }
 }

@@ -58,17 +58,13 @@ final class MovieDetailVC: UIViewController {
         directorLabel.text = movie.director
         castLabel.attributedText = movie.castList()
     }
-    
-    private func goToSessionView(_ movie: Movie) {
-        let reservationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReservationVC") as! ReservationVC
-        reservationVC.movie = movie
-        navigationController?.pushViewController(reservationVC, animated: true)
-    }
-    
+        
     // MARK: - Actions
     
     @IBAction private func btnBookTickets_TUI(_ sender: Any) {
         guard let movie else { return }
-        goToSessionView(movie)
+        let reservationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReservationVC") as! ReservationVC
+        reservationVC.movie = movie
+        navigationController?.pushViewController(reservationVC, animated: true)
     }
 }

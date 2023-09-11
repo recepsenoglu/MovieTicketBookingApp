@@ -7,12 +7,12 @@
 
 import UIKit
 
-class CVFlowLayout_Days: UICollectionViewFlowLayout {
+class SessionDaysFlowLayout: UICollectionViewFlowLayout {
     
     init(minimumInteritemSpacing: CGFloat = 5) {
         super.init()
-        self.minimumInteritemSpacing = minimumInteritemSpacing
         scrollDirection = .horizontal
+        self.minimumInteritemSpacing = minimumInteritemSpacing
     }
     
     required init?(coder: NSCoder) {

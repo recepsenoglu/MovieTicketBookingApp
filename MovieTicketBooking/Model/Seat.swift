@@ -8,33 +8,19 @@
 import Foundation
 
 struct Seat {
+    var section: Int
+    var row: Int
     var selected: Bool
     var sold: Bool
-    var coord: SeatCoord
-    var id: String { get { "(\(coord.section),\(coord.number))" } }
+    var seatCode: String { get { "\(sectionLetters[section])\(row + 1)" } }
     
-    init(selected: Bool = false, sold: Bool = false, coord: SeatCoord) {
+    func isIdentical(_ otherSeat: Seat) -> Bool { seatCode == otherSeat.seatCode }
+
+    init(_ section: Int, _ row: Int, selected: Bool = false, sold: Bool = false) {
+        self.section = section
+        self.row = row
         self.selected = selected
         self.sold = sold
-        self.coord = coord
-    }
-    
-    func isEqual(_ seat: Seat)->Bool { seat.id == self.id }
-    
-    func seatCode() -> String { "\(sectionLetters[self.coord.section])\(self.coord.number + 1)" }
-}
-
-struct SeatCoord {
-    var section: Int
-    var number: Int
-    
-    init(section: Int, number: Int) {
-        self.section = section
-        self.number = number
-    }
-    
-    func printCoords(){
-        print("section: \(section)\nindex: \(number)")
     }
 }
 

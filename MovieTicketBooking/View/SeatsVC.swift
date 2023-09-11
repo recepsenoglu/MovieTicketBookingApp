@@ -1,5 +1,5 @@
 //
-//  VC_Seats.swift
+//  SeatsVC.swift
 //  MovieTicketBooking
 //
 //  Created by Recep Oğuzhan Şenoğlu on 5.09.2023.
@@ -7,136 +7,114 @@
 
 import UIKit
 
-class SeatsVC: UIViewController {
+final class SeatsVC: UIViewController {
+    
     // MARK: - Outlets
-    @IBOutlet weak var cvSeats: UICollectionView!
-    @IBOutlet weak var lblDateAndTime: UILabel!
-    @IBOutlet weak var lblSelectedSeats: UILabel!
-    @IBOutlet weak var lblPrice: UILabel!
-    @IBOutlet weak var lblTickets: UILabel!
+    
+    @IBOutlet weak private var seatsCV: UICollectionView!
+    @IBOutlet weak private var sessionLabel: UILabel!
+    @IBOutlet weak private var selectedSeatsLabel: UILabel!
+    @IBOutlet weak private var priceLabel: UILabel!
+    @IBOutlet weak private var ticketsLabel: UILabel!
     
     // MARK: - Variables
-    public var movie: Movie?
-    public var day: Day?
-    public var hour: String?
+    
+    var movie: Movie?
+    var session: Session?
     private var seats: [Seat] = []
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        cvSeats.register(UINib(nibName: "CVCell_Seat", bundle: nil), forCellWithReuseIdentifier: "CVCell_Seat")
-        cvSeats.collectionViewLayout = CVFlowLayout_Seats()
-        initSeats()
-        initSession()
-
+        setupSeatsCV()
+        createSeats()
+        sessionLabel.text = session?.toString()
     }
     
     // MARK: - Functions
-    func initSeats() {
+    
+    private func setupSeatsCV() {
+        seatsCV.register(UINib(nibName: "SeatCVC", bundle: nil), forCellWithReuseIdentifier: "SeatCVC")
+        seatsCV.collectionViewLayout = SeatsFlowLayout()
+    }
+    
+    private func createSeats() {
+        guard let movie = movie, let session = session else { return }
+        let soldSeats: [Seat] = Ticket.soldSeats(movie: movie, session: session)
         for section in 0..<9 {
             let sectionLength = section == 0 ? 5 : section == 1 ? 7 : 9
-            for seatNumber in 0..<sectionLength {
-                let seat = Seat(coord: SeatCoord(section: section, number: seatNumber))
+            for row in 0..<sectionLength {
+                var seat = Seat(section, row)
+                if soldSeats.contains(where: { soldSeat in soldSeat.isIdentical(seat) }) {
+                    seat.sold = true
+                }
                 seats.append(seat)
             }
         }
     }
     
-    func initSession() {
-        guard let day = day, let hour = hour else { return }
-        let dayNumber = day.getDay()
-        let month = day.getMonth()
-        lblDateAndTime.text = "\(dayNumber) \(month) - \(hour)"
-    }
+    private func selectedSeats() -> [Seat] { seats.filter({ $0.selected }) }
     
-    func setSelectedSeats() {
-        lblSelectedSeats.text = getSelectedSeatCodes()
-    }
+    private func selectedSeatsCount() -> Int { selectedSeats().count }
     
-    func setPrice(_ price: Double) {
-        lblPrice.text = String(price)
-    }
-    
-    func setTickets(_ tickets: Int) {
-        lblTickets.text = String(tickets)
-    }
-    
-    func getSelectedSeats()->[Seat] {
-        return seats.filter({ $0.selected })
-    }
-    
-    func getSelectedSeatCodes()->String {
-        let selectedSeatCodes = getSelectedSeats().map({seat in seat.seatCode() })
+    private func selectedSeatsCodes() -> String {
+        let selectedSeatCodes = selectedSeats().map({seat in seat.seatCode })
         return selectedSeatCodes.joined(separator: ", ")
     }
     
-    func getTotalPrice()->Double {
-        let seatCount: Int = getSelectedSeats().count
-        return Double(seatCount) * 20.0
-    }
-    
-    func getSeatIndex(_ indexPath: IndexPath)-> Int {
+    private func calculateTotalPrice() -> Double { Double(selectedSeatsCount()) * 20.0 }
+        
+    private func seatIndexOf(_ indexPath: IndexPath)-> Int {
         let section = indexPath.section
         let row = indexPath.row
         let difference = section > 1 ? 6 : section > 0 ? 4 : 0
-        
         return (section) * 9 + row - difference
     }
     
-    func seatOnTap(_ index: Int) {
-        if getSelectedSeats().count >= 10 {
-            self.showToast(message: "You can not buy more than 10 tickets")
+    private func seatOnTap(_ index: Int) {
+        guard seats[index].sold != true else { return }
+        let isSelected = seats[index].selected
+        guard selectedSeatsCount() < 10 || isSelected else {
+            self.showToast("You can not buy more than 10 tickets")
             return
         }
-        seats[index].coord.printCoords()
-        seats[index].selected = !seats[index].selected
-        let seatCount: Int = getSelectedSeats().count
-        let price: Double = getTotalPrice()
-        setTickets(seatCount)
-        setPrice(price)
-        setSelectedSeats()
-        cvSeats.reloadData()
-    }
-    
-    func buyTickets() {
-        if getSelectedSeats().count == 0 {
-            self.showToast(message: "Please choose at least 1 seat")
-        } else {
-            let vcTicket = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TicketVC") as! TicketVC
-            vcTicket.movie = movie
-            vcTicket.day = day
-            vcTicket.hour = hour
-            vcTicket.seats = getSelectedSeatCodes()
-            vcTicket.price = getTotalPrice()
-            navigationController?.pushViewController(vcTicket, animated: true)
-        }
+        seats[index].selected = !isSelected
+        seatsCV.reloadData()
+        ticketsLabel.text = String(selectedSeatsCount())
+        selectedSeatsLabel.text = selectedSeatsCodes()
+        priceLabel.text = calculateTotalPrice().toString()
     }
     
     // MARK: - Actions
-    @IBAction func btnBuyTickets_TUI(_ sender: Any) {
-        buyTickets()
-    }
     
+    @IBAction private func btnBuyTickets_TUI(_ sender: Any) {
+        guard selectedSeatsCount() > 0 else {
+            self.showToast("Please choose at least 1 seat")
+            return
+        }
+        let ticketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TicketVC") as! TicketVC
+        let ticket = Ticket(movie: movie!, session: session!, seats: selectedSeats(), price: calculateTotalPrice())
+        ticketVC.ticket = ticket
+        navigationController?.pushViewController(ticketVC, animated: true)
+    }
 }
 
 extension SeatsVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 9
-    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int { 9 }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return seats.filter({seat in
-            return seat.coord.section == section
-        }).count
+        return seats.filter({seat in seat.section == section }).count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let seat: Seat = seats[getSeatIndex(indexPath)]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CVCell_Seat", for: indexPath) as! CVCell_Seat
-        cell.setSeatAttributes(seat)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeatCVC", for: indexPath) as! SeatCVC
+        let seat: Seat = seats[seatIndexOf(indexPath)]
+        cell.setupCell(seat)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        seatOnTap(getSeatIndex(indexPath))
+        seatOnTap(seatIndexOf(indexPath))
     }
 }
