@@ -12,17 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SeatCVC" customModule="MovieTicketBooking" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+            <rect key="frame" x="0.0" y="0.0" width="30" height="32"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                <rect key="frame" x="0.0" y="0.0" width="30" height="32"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-3S-Kwc">
-                        <rect key="frame" x="0.0" y="2" width="25" height="21.333333333333332"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="rk0-3S-Kwc" secondAttribute="height" multiplier="1:1" id="ozk-cf-Dw4"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-3S-Kwc">
+                        <rect key="frame" x="0.0" y="1.9999999999999982" width="30" height="28.333333333333329"/>
                         <imageReference key="image" image="chair.lounge.fill" catalog="system" renderingMode="hierarchical">
                             <hierarchicalColors>
                                 <color systemColor="labelColor"/>
@@ -40,11 +37,11 @@
                 <constraint firstItem="rk0-3S-Kwc" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="oHL-Mx-552"/>
                 <constraint firstItem="rk0-3S-Kwc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ykL-vS-ZVD"/>
             </constraints>
-            <size key="customSize" width="78" height="79"/>
+            <size key="customSize" width="83" height="86"/>
             <connections>
                 <outlet property="imageIV" destination="rk0-3S-Kwc" id="yK5-6T-XmP"/>
             </connections>
-            <point key="canvasLocation" x="98.473282442748086" y="29.929577464788736"/>
+            <point key="canvasLocation" x="102.29007633587786" y="31.690140845070424"/>
         </collectionViewCell>
     </objects>
     <resources>
