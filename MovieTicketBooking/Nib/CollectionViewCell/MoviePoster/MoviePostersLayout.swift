@@ -23,6 +23,24 @@ class MoviePostersLayout: UICollectionViewFlowLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        guard let collectionView = collectionView else { return nil }
+        var allAttributes: [UICollectionViewLayoutAttributes] = []
+        for item in 0..<collectionView.numberOfItems(inSection: 0) {
+            let indexPath = IndexPath(item: item, section: 0)
+            if let attributes = layoutAttributesForItem(at: indexPath) {
+                allAttributes.append(attributes)
+            }
+        }
+        return allAttributes
+    }
+
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let attributes = super.layoutAttributesForItem(at: indexPath)?.copy() as!UICollectionViewLayoutAttributes
+        attributes.frame.origin.x += 20.0
+        return attributes
+    }
+    
     override func prepare() {
         super.prepare()
         guard let collectionView = collectionView else { return }

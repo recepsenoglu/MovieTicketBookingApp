@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE499BAB2AB4D146004F3F9C /* MovieSlideHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE499BAA2AB4D146004F3F9C /* MovieSlideHeader.swift */; };
+		CE499BAD2AB4D15E004F3F9C /* MovieSlideHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE499BAC2AB4D15E004F3F9C /* MovieSlideHeader.xib */; };
+		CE4B602B2AB43FC4003D4C56 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B602A2AB43FC4003D4C56 /* Extension+UIView.swift */; };
 		CE4DB5072AAB9E2F00FBF183 /* MoviePosterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4DB5052AAB9E2F00FBF183 /* MoviePosterCVC.swift */; };
 		CE4DB5082AAB9E2F00FBF183 /* MoviePosterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4DB5062AAB9E2F00FBF183 /* MoviePosterCVC.xib */; };
 		CE57E4102AA225DF006A822F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57E40F2AA225DF006A822F /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE499BAA2AB4D146004F3F9C /* MovieSlideHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSlideHeader.swift; sourceTree = "<group>"; };
+		CE499BAC2AB4D15E004F3F9C /* MovieSlideHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSlideHeader.xib; sourceTree = "<group>"; };
+		CE4B602A2AB43FC4003D4C56 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		CE4DB5052AAB9E2F00FBF183 /* MoviePosterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePosterCVC.swift; sourceTree = "<group>"; };
 		CE4DB5062AAB9E2F00FBF183 /* MoviePosterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviePosterCVC.xib; sourceTree = "<group>"; };
 		CE57E40C2AA225DF006A822F /* MovieTicketBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTicketBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +124,7 @@
 				CE6CA6362AAF518B0008C58D /* Extension+String.swift */,
 				CE6CA6382AAF51B50008C58D /* Extension+Session.swift */,
 				CE6CA63A2AAF51E90008C58D /* Extension+UIViewController.swift */,
+				CE4B602A2AB43FC4003D4C56 /* Extension+UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 		CE1E9A1C2AAB34CD00145282 /* Nib */ = {
 			isa = PBXGroup;
 			children = (
+				CE4B60252AB1ADBD003D4C56 /* ReusableView */,
 				CE6CA62C2AAC83610008C58D /* TableViewCell */,
 				CE1E9A1D2AAB355500145282 /* CollectionViewCell */,
 			);
@@ -162,6 +170,15 @@
 				CE4DB5062AAB9E2F00FBF183 /* MoviePosterCVC.xib */,
 			);
 			path = MoviePoster;
+			sourceTree = "<group>";
+		};
+		CE4B60252AB1ADBD003D4C56 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE499BAA2AB4D146004F3F9C /* MovieSlideHeader.swift */,
+				CE499BAC2AB4D15E004F3F9C /* MovieSlideHeader.xib */,
+			);
+			path = ReusableView;
 			sourceTree = "<group>";
 		};
 		CE4DB5092AABA33300FBF183 /* UpcomingMoviePoster */ = {
@@ -329,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE499BAD2AB4D15E004F3F9C /* MovieSlideHeader.xib in Resources */,
 				CE64EC0F2AA48F2B002FED5F /* MovieCVC.xib in Resources */,
 				CE57E41C2AA225E1006A822F /* LaunchScreen.storyboard in Resources */,
 				CE64EC2D2AA78F3A002FED5F /* SeatCVC.xib in Resources */,
@@ -367,6 +385,8 @@
 				CE6CA6372AAF518B0008C58D /* Extension+String.swift in Sources */,
 				CE6CA6392AAF51B50008C58D /* Extension+Session.swift in Sources */,
 				CE64EC2F2AA791D0002FED5F /* SeatsFlowLayout.swift in Sources */,
+				CE4B602B2AB43FC4003D4C56 /* Extension+UIView.swift in Sources */,
+				CE499BAB2AB4D146004F3F9C /* MovieSlideHeader.swift in Sources */,
 				CEE7CA292AA3B66A00A33948 /* UpcomingMoviePosterCVC.swift in Sources */,
 				CE57E4102AA225DF006A822F /* AppDelegate.swift in Sources */,
 				CE6CA62F2AAF023F0008C58D /* Ticket.swift in Sources */,
@@ -459,7 +479,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

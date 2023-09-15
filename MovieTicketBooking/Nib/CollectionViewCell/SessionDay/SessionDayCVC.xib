@@ -10,24 +10,24 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SessionDayCVC" customModule="MovieTicketBooking" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBA-DG-4Ka">
-                        <rect key="frame" x="5" y="5" width="70" height="70"/>
+                        <rect key="frame" x="5" y="5" width="60" height="60"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDQ-yd-mcG">
-                                <rect key="frame" x="5" y="6" width="60" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="5" y="5" width="50" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdR-ji-EDy">
-                                <rect key="frame" x="16.666666666666671" y="27" width="37" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <rect key="frame" x="14.999999999999998" y="25" width="30.333333333333329" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -35,10 +35,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kdR-ji-EDy" firstAttribute="centerX" secondItem="BBA-DG-4Ka" secondAttribute="centerX" id="QWv-br-uAM"/>
-                            <constraint firstItem="kdR-ji-EDy" firstAttribute="top" secondItem="GDQ-yd-mcG" secondAttribute="bottom" id="YdH-7A-bJH"/>
+                            <constraint firstItem="kdR-ji-EDy" firstAttribute="top" secondItem="GDQ-yd-mcG" secondAttribute="bottom" constant="2" id="YdH-7A-bJH"/>
                             <constraint firstAttribute="trailing" secondItem="GDQ-yd-mcG" secondAttribute="trailing" constant="5" id="hw6-9P-hBY"/>
                             <constraint firstItem="GDQ-yd-mcG" firstAttribute="leading" secondItem="BBA-DG-4Ka" secondAttribute="leading" constant="5" id="io9-oI-4kP"/>
-                            <constraint firstItem="GDQ-yd-mcG" firstAttribute="top" secondItem="BBA-DG-4Ka" secondAttribute="top" constant="6" id="lVc-X6-mVd"/>
+                            <constraint firstItem="GDQ-yd-mcG" firstAttribute="top" secondItem="BBA-DG-4Ka" secondAttribute="top" constant="5" id="lVc-X6-mVd"/>
                             <constraint firstAttribute="width" secondItem="BBA-DG-4Ka" secondAttribute="height" multiplier="5:5" id="y4A-6v-cKC"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

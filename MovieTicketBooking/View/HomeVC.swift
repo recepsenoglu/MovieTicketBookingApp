@@ -10,7 +10,9 @@ import UIKit
 final class HomeVC: UIViewController {
     // MARK: - Outlets
     
+    @IBOutlet weak private var moviesHeader: MovieSlideHeader!
     @IBOutlet weak private var moviesCV: UICollectionView!
+    @IBOutlet weak var upcomingMoviesHeader: MovieSlideHeader!
     @IBOutlet weak private var upcomingMoviesCV: UICollectionView!
     
     // MARK: - Variables
@@ -24,6 +26,7 @@ final class HomeVC: UIViewController {
         super.viewDidLoad()
         setupMoviesCV()
         setupUpcomingMoviesCV()
+        setupHeaders()
         loadMovies()
         loadUpcomingMovies()
     }
@@ -39,6 +42,11 @@ final class HomeVC: UIViewController {
     }
     
     // MARK: - Functions
+    
+    private func setupHeaders() {
+        moviesHeader.configureView(title: "Now Showing", onPressed: {self.goToMovies()})
+        upcomingMoviesHeader.configureView(title: "Upcoming", onPressed: {self.goToMovies(ShowType.Upcoming)})
+    }
     
     private func setupMoviesCV() {
         moviesCV.register(UINib(nibName: "MoviePosterCVC", bundle: nil), forCellWithReuseIdentifier: "MoviePosterCVC")
@@ -71,15 +79,6 @@ final class HomeVC: UIViewController {
         let movieDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailVC") as! MovieDetailVC
         movieDetailVC.movie = movie
         navigationController?.pushViewController(movieDetailVC, animated: true)
-    }
-    
-    // MARK: - Actions
-    @IBAction private func btnAllMovies_TUI(_ sender: Any) {
-        goToMovies()
-    }
-    
-    @IBAction private func btnAllUpcomingMovies_TUI(_ sender: Any) {
-        goToMovies(ShowType.Upcoming)
     }
 }
 
