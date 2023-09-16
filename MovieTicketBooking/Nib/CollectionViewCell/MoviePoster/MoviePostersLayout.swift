@@ -12,7 +12,7 @@ class MoviePostersLayout: UICollectionViewFlowLayout {
     private var customInteritemSpacing: CGFloat = 10
     private var aspectRatio: Double = 3 / 4
 
-    init(bottomHeight: Double = 55, imageAspectRatio aspectRatio: Double = 3/4) {
+    init(bottomHeight: Double = 45, imageAspectRatio aspectRatio: Double = 3/4) {
         self.bottomHeight = bottomHeight
         self.aspectRatio = aspectRatio
         super.init()
