@@ -270,7 +270,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" translatesAutoresizingMaskIntoConstraints="NO" id="lAl-Ea-ecE">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="lAl-Ea-ecE">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="898"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVE-WU-DO7" userLabel="Content View">
@@ -494,8 +494,8 @@
                                     <constraint firstItem="LVE-WU-DO7" firstAttribute="leading" secondItem="lAl-Ea-ecE" secondAttribute="leading" id="suu-PY-ey3"/>
                                     <constraint firstItem="LVE-WU-DO7" firstAttribute="width" secondItem="lAl-Ea-ecE" secondAttribute="width" id="uXt-x6-dxR"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="spD-9Z-3z7"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="FQ5-Fb-Yxv"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="hNB-zl-ns8"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="RKH-bZ-L5x"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Vj-gJ-iMV"/>
@@ -507,6 +507,7 @@
                             <constraint firstItem="lAl-Ea-ecE" firstAttribute="leading" secondItem="wgX-WR-DDS" secondAttribute="leading" id="bQk-24-VhK"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="castLabel" destination="2tj-g4-XlP" id="Jun-j2-SNr"/>
                         <outlet property="contentRatingLabel" destination="fcY-Y9-bqv" id="x01-fk-qrL"/>
@@ -521,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8GT-3F-RYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4167.9069767441861" y="0.64377682403433478"/>
+            <point key="canvasLocation" x="4169" y="1"/>
         </scene>
         <!--Reservation-->
         <scene sceneID="Evk-OD-UNo">
