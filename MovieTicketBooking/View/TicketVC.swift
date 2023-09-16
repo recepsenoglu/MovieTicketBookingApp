@@ -47,7 +47,6 @@ final class TicketVC: UIViewController {
     // MARK: - Outlets
     
     @IBAction func btnGoHome_TUI(_ sender: Any) {
-        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "HomeVC") as! HomeVC
-        navigationController?.pushViewController(homeVC, animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 }

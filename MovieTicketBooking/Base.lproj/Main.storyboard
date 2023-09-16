@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QMn-la-i0z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -71,7 +71,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aD8-Lc-n6B">
-                                <rect key="frame" x="0.0" y="103" width="430" height="695"/>
+                                <rect key="frame" x="0.0" y="59" width="430" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9ZU-An-Ihe">
                                     <size key="itemSize" width="430" height="600"/>
@@ -105,11 +105,12 @@
                         <outlet property="btnSkip" destination="2xw-mY-A65" id="58X-i7-wrd"/>
                         <outlet property="pageControl" destination="mMh-2N-rQT" id="9hr-ZO-wr1"/>
                         <outlet property="slidesCV" destination="aD8-Lc-n6B" id="osB-R6-igN"/>
+                        <segue destination="QMn-la-i0z" kind="show" identifier="homeSegue" id="4zw-vy-Jgz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918.1395348837209" y="0.64377682403433478"/>
+            <point key="canvasLocation" x="1031" y="1"/>
         </scene>
         <!--Home-->
         <scene sceneID="BXN-QO-do5">
@@ -120,13 +121,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="466-Jd-lV6">
-                                <rect key="frame" x="169.66666666666666" y="69" width="90.999999999999972" height="33.666666666666657"/>
+                                <rect key="frame" x="169.66666666666666" y="10" width="90.999999999999972" height="33.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-Ul-YEx">
-                                <rect key="frame" x="0.0" y="161.66666666666663" width="430" height="354"/>
+                                <rect key="frame" x="0.0" y="102.66666666666669" width="430" height="353.99999999999994"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rWU-Lm-W21">
                                     <size key="itemSize" width="255" height="341"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -140,7 +141,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JAU-6P-nvz">
-                                <rect key="frame" x="0.0" y="576.66666666666663" width="430" height="205"/>
+                                <rect key="frame" x="0.0" y="517.66666666666663" width="430" height="205.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oWL-Jn-6xw">
                                     <size key="itemSize" width="183" height="183"/>
@@ -155,14 +156,14 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubH-2C-wOT" customClass="MovieSlideHeader" customModule="MovieTicketBooking" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="110.66666666666669" width="430" height="46"/>
+                                <rect key="frame" x="0.0" y="51.666666666666657" width="430" height="46"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="qpF-lA-5D4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1f-cZ-eAz" customClass="MovieSlideHeader" customModule="MovieTicketBooking" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="525.66666666666663" width="430" height="46"/>
+                                <rect key="frame" x="0.0" y="466.66666666666669" width="430" height="46.000000000000057"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="u3r-R3-UsW"/>
@@ -1329,31 +1330,14 @@
             <point key="canvasLocation" x="6475.8139534883721" y="0.64377682403433478"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="r3R-59-CTN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XJ3-iJ-vf6" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Rp-hS-DhE">
-                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lXg-ST-DBS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TR6-Wr-L5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="120" y="1"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="gVT-zT-2ng">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QMn-la-i0z" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="QMn-la-i0z" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3E2-hm-mnm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I9Y-wS-4pc">
-                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1366,7 +1350,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vwm-Ep-g9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="1"/>
+            <point key="canvasLocation" x="1849" y="1"/>
         </scene>
     </scenes>
     <resources>

@@ -54,7 +54,6 @@ final class OnboardingVC: UIViewController {
     }
     
     private func moveSlide(_ index: Int) {
-        print("index: \(index)")
         let pageIndexPath = IndexPath(item: index, section: 0)
         slidesCV.isPagingEnabled = false
         slidesCV.scrollToItem(at: pageIndexPath, at: .centeredHorizontally, animated: true)
@@ -62,8 +61,7 @@ final class OnboardingVC: UIViewController {
     }
     
     private func goToHomeView() {
-        let vcHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-        navigationController?.pushViewController(vcHome, animated: true)
+        performSegue(withIdentifier: "homeSegue", sender: self)
     }
     
     // MARK: - Actions
