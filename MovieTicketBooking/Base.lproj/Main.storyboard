@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,38 +20,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pe-tk-2sO" userLabel="ButtonsView">
-                                <rect key="frame" x="0.0" y="798" width="430" height="100"/>
+                                <rect key="frame" x="0.0" y="778" width="430" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xw-mY-A65">
-                                        <rect key="frame" x="29.999999999999993" y="29.666666666666629" width="69.333333333333314" height="41"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Skip">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
-                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="btnSkip_TUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6G6-if-P4q"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-9P-coY">
-                                        <rect key="frame" x="327.66666666666669" y="29.666666666666629" width="72.333333333333314" height="41"/>
-                                        <color key="backgroundColor" name="PrimaryColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="btnNext_TUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W8a-Vw-vWb"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GK6-Sk-DyT">
+                                        <rect key="frame" x="30" y="40" width="370" height="40.333333333333343"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xw-mY-A65">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="40.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Skip">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="btnSkip_TUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6G6-if-P4q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-9P-coY">
+                                                <rect key="frame" x="297.66666666666669" y="0.0" width="72.333333333333314" height="40.333333333333336"/>
+                                                <color key="backgroundColor" name="PrimaryColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Next">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnNext_TUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W8a-Vw-vWb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="mMh-2N-rQT">
-                                        <rect key="frame" x="153.66666666666666" y="37" width="122.66666666666666" height="26"/>
+                                        <rect key="frame" x="157.33333333333334" y="0.0" width="115.66666666666666" height="26"/>
                                         <color key="pageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" name="PrimaryColor"/>
                                         <connections>
@@ -60,18 +66,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="2xw-mY-A65" firstAttribute="centerY" secondItem="4Pe-tk-2sO" secondAttribute="centerY" id="5Fh-md-wfh"/>
-                                    <constraint firstAttribute="trailing" secondItem="NKQ-9P-coY" secondAttribute="trailing" constant="30" id="HGW-Kp-k7Y"/>
-                                    <constraint firstItem="mMh-2N-rQT" firstAttribute="centerX" secondItem="4Pe-tk-2sO" secondAttribute="centerX" id="KiJ-fl-b2n"/>
-                                    <constraint firstItem="2xw-mY-A65" firstAttribute="leading" secondItem="4Pe-tk-2sO" secondAttribute="leading" constant="30" id="Pth-de-Blh"/>
-                                    <constraint firstItem="mMh-2N-rQT" firstAttribute="leading" secondItem="2xw-mY-A65" secondAttribute="trailing" constant="54.333333333333314" id="QwN-li-q9c"/>
-                                    <constraint firstAttribute="height" constant="100" id="TJW-t3-FLp"/>
-                                    <constraint firstItem="NKQ-9P-coY" firstAttribute="bottom" secondItem="2xw-mY-A65" secondAttribute="bottom" id="eCW-64-mTT"/>
-                                    <constraint firstItem="mMh-2N-rQT" firstAttribute="centerY" secondItem="4Pe-tk-2sO" secondAttribute="centerY" id="ov3-HT-TGK"/>
+                                    <constraint firstItem="GK6-Sk-DyT" firstAttribute="leading" secondItem="4Pe-tk-2sO" secondAttribute="leading" constant="30" id="2xv-jV-RDL"/>
+                                    <constraint firstItem="mMh-2N-rQT" firstAttribute="centerX" secondItem="4Pe-tk-2sO" secondAttribute="centerX" id="QtT-Yl-IrW"/>
+                                    <constraint firstAttribute="trailing" secondItem="GK6-Sk-DyT" secondAttribute="trailing" constant="30" id="RAR-Ri-qen"/>
+                                    <constraint firstAttribute="height" constant="120" id="TJW-t3-FLp"/>
+                                    <constraint firstItem="GK6-Sk-DyT" firstAttribute="centerY" secondItem="4Pe-tk-2sO" secondAttribute="centerY" id="c5w-pr-5Mx"/>
+                                    <constraint firstItem="mMh-2N-rQT" firstAttribute="top" secondItem="4Pe-tk-2sO" secondAttribute="top" id="vuK-lq-RH6"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aD8-Lc-n6B">
-                                <rect key="frame" x="0.0" y="59" width="430" height="739"/>
+                                <rect key="frame" x="0.0" y="59" width="430" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9ZU-An-Ihe">
                                     <size key="itemSize" width="430" height="600"/>
