@@ -12,7 +12,7 @@ final class HomeVC: UIViewController {
     
     @IBOutlet weak private var moviesHeader: MovieSlideHeader!
     @IBOutlet weak private var moviesCV: UICollectionView!
-    @IBOutlet weak var upcomingMoviesHeader: MovieSlideHeader!
+    @IBOutlet weak private var upcomingMoviesHeader: MovieSlideHeader!
     @IBOutlet weak private var upcomingMoviesCV: UICollectionView!
     
     // MARK: - Variables

@@ -12,7 +12,7 @@ struct Seat {
     var row: Int
     var selected: Bool
     var sold: Bool
-    var seatCode: String { get { "\(sectionLetters[section])\(row + 1)" } }
+    var seatCode: String { get { "\(["A", "B", "C", "D", "E", "F", "G", "H", "J"][section])\(row + 1)" } }
     
     func isIdentical(_ otherSeat: Seat) -> Bool { seatCode == otherSeat.seatCode }
 
@@ -23,5 +23,3 @@ struct Seat {
         self.sold = sold
     }
 }
-
-var sectionLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "J"]

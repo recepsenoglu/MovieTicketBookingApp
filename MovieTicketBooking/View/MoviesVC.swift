@@ -15,15 +15,18 @@ enum ShowType: Int {
 final class MoviesVC: UIViewController {
     
     // MARK: - Outlets
+    
     @IBOutlet private weak var showTypeSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var moviesCV: UICollectionView!
     
     // MARK: - Variables
+    
     var movies: [Movie] = []
     var upcomingMovies: [Movie] = []
     var showType: ShowType = ShowType.NowShowing
 
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMoviesCV()

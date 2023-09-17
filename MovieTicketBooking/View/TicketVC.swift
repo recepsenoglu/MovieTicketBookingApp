@@ -46,7 +46,7 @@ final class TicketVC: UIViewController {
         
     // MARK: - Outlets
     
-    @IBAction func btnGoHome_TUI(_ sender: Any) {
+    @IBAction private func btnGoHome_TUI(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
 }
