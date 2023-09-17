@@ -29,23 +29,10 @@ final class MoviesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMoviesCV()
         showTypeSegmentedControl.selectedSegmentIndex = showType.rawValue
+        moviesCV.setup("MovieCVC", MoviesFlowLayout())
     }
-    
-    // MARK: - Functions
         
-    private func setupMoviesCV() {
-        moviesCV.register(UINib(nibName: "MovieCVC", bundle: nil), forCellWithReuseIdentifier: "MovieCVC")
-        moviesCV.collectionViewLayout = MoviesFlowLayout()
-    }
-    
-    private func goToMovieDetails(_ movie: Movie) {
-        let vcMovieDetail = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailVC") as! MovieDetailVC
-        vcMovieDetail.movie = movie
-        navigationController?.pushViewController(vcMovieDetail, animated: true)
-    }
-    
     // MARK: - Actions
     
     @IBAction private func showTypeSegmentedControl_ValueChanged(_ sender: UISegmentedControl) {
@@ -69,6 +56,8 @@ extension MoviesVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = showType == ShowType.NowShowing ? movies[indexPath.row] : upcomingMovies[indexPath.row]
-        goToMovieDetails(movie)
+        let vcMovieDetail = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailVC") as! MovieDetailVC
+        vcMovieDetail.movie = movie
+        navigationController?.pushViewController(vcMovieDetail, animated: true)
     }
 }

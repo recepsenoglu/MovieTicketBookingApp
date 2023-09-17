@@ -12,6 +12,7 @@ class OnboardingFlowLayout: UICollectionViewFlowLayout {
     override init() {
         super.init()
         scrollDirection = .horizontal
+        minimumInteritemSpacing = 0.0
     }
     
     required init?(coder: NSCoder) {

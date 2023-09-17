@@ -27,17 +27,12 @@ final class SeatsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSeatsCV()
         createSeats()
         sessionLabel.text = session?.toString()
+        seatsCV.setup("SeatCVC", SeatsFlowLayout())
     }
     
     // MARK: - Functions
-    
-    private func setupSeatsCV() {
-        seatsCV.register(UINib(nibName: "SeatCVC", bundle: nil), forCellWithReuseIdentifier: "SeatCVC")
-        seatsCV.collectionViewLayout = SeatsFlowLayout()
-    }
     
     private func createSeats() {
         guard let movie = movie, let session = session else { return }

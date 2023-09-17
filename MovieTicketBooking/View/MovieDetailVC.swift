@@ -30,8 +30,8 @@ final class MovieDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initMovie()
         pageTitle = self.title
+        fillMovieInformation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +46,7 @@ final class MovieDetailVC: UIViewController {
         
     // MARK: - Functions
     
-    private func initMovie() {
+    private func fillMovieInformation() {
         guard let movie else { return }
         imageIV.image = movie.image
         titleLabel.text = movie.title

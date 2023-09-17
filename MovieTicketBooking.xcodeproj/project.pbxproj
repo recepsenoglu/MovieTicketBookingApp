@@ -52,6 +52,7 @@
 		CEE7CA2A2AA3B66A00A33948 /* UpcomingMoviePosterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7CA282AA3B66A00A33948 /* UpcomingMoviePosterCVC.xib */; };
 		CEEA3A322AA24F9500A25003 /* OnboardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3A302AA24F9500A25003 /* OnboardingCVC.swift */; };
 		CEEA3A332AA24F9500A25003 /* OnboardingCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3A312AA24F9500A25003 /* OnboardingCVC.xib */; };
+		CEF3C0082AB74AD1002DE30D /* Extension+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3C0072AB74AD1002DE30D /* Extension+UICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		CEE7CA282AA3B66A00A33948 /* UpcomingMoviePosterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingMoviePosterCVC.xib; sourceTree = "<group>"; };
 		CEEA3A302AA24F9500A25003 /* OnboardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCVC.swift; sourceTree = "<group>"; };
 		CEEA3A312AA24F9500A25003 /* OnboardingCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCVC.xib; sourceTree = "<group>"; };
+		CEF3C0072AB74AD1002DE30D /* Extension+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				CE6CA6382AAF51B50008C58D /* Extension+Session.swift */,
 				CE6CA63A2AAF51E90008C58D /* Extension+UIViewController.swift */,
 				CE4B602A2AB43FC4003D4C56 /* Extension+UIView.swift */,
+				CEF3C0072AB74AD1002DE30D /* Extension+UICollectionView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				CEE7CA262AA365A000A33948 /* MoviePostersLayout.swift in Sources */,
 				CE64EC152AA5BDEA002FED5F /* ReservationVC.swift in Sources */,
 				CE64EC132AA510D3002FED5F /* MovieDetailVC.swift in Sources */,
+				CEF3C0082AB74AD1002DE30D /* Extension+UICollectionView.swift in Sources */,
 				CE64EC312AA8A937002FED5F /* TicketVC.swift in Sources */,
 				CE6CA6372AAF518B0008C58D /* Extension+String.swift in Sources */,
 				CE6CA6392AAF51B50008C58D /* Extension+Session.swift in Sources */,

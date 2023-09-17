@@ -30,27 +30,13 @@ final class ReservationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSessionDaysCV()
-        initMovie()
         initDays()
         initTimes()
+        fillMovieInfo()
+        sessionDaysCV.setup("SessionDayCVC", SessionDaysFlowLayout())
     }
     
     // MARK: - Functions
-    
-    private func setupSessionDaysCV() {
-        sessionDaysCV.register(UINib(nibName: "SessionDayCVC", bundle: nil), forCellWithReuseIdentifier: "SessionDayCVC")
-        sessionDaysCV.collectionViewLayout = SessionDaysFlowLayout()
-    }
-    
-    private func initMovie() {
-        guard let movie = movie else { return }
-        imageIV.image = movie.image
-        titleLabel.text = movie.title
-        durationLabel.text = movie.durationString()
-        contentRatingLabel.text = movie.contentRating.rawValue
-        genreLabel.text = movie.genresString()
-    }
     
     private func initDays() {
         let today = Date()
@@ -71,6 +57,15 @@ final class ReservationVC: UIViewController {
             sessionTimes.append(time)
         }
     }
+    
+    private func fillMovieInfo() {
+        guard let movie = movie else { return }
+        imageIV.image = movie.image
+        titleLabel.text = movie.title
+        durationLabel.text = movie.durationString()
+        contentRatingLabel.text = movie.contentRating.rawValue
+        genreLabel.text = movie.genresString()
+    }
         
     // MARK: - Actions
     
@@ -88,7 +83,9 @@ final class ReservationVC: UIViewController {
 }
 
 extension ReservationVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { sessionDays.count }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        sessionDays.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SessionDayCVC", for: indexPath) as! SessionDayCVC

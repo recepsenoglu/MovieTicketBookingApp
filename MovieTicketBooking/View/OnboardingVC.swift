@@ -24,8 +24,8 @@ final class OnboardingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
         loadSlides()
+        slidesCV.setup("OnboardingCVC", OnboardingFlowLayout())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,11 +34,6 @@ final class OnboardingVC: UIViewController {
     }
     
     // MARK: - Functions
-    
-    private func setupCollectionView() {
-        slidesCV.register(UINib(nibName: "OnboardingCVC", bundle: nil), forCellWithReuseIdentifier: "OnboardingCVC")
-        slidesCV.collectionViewLayout = OnboardingFlowLayout()
-    }
     
     private func loadSlides() {
         let slide0 = OnboardingSlide(image: "Onboarding0", title: "Easy Ticket Booking", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sodales ante. Morbi venenatis elit sit amet facilisis molestie. Nam accumsan urna lorem, vitae ornare lectus eleifend ac.")

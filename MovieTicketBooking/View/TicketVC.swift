@@ -25,7 +25,7 @@ final class TicketVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initTicket()
+        fillTicket()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +35,7 @@ final class TicketVC: UIViewController {
     
     // MARK: - Functions
     
-    private func initTicket() {
+    private func fillTicket() {
         guard let ticket = ticket else { return }
         titleLabel.text = ticket.movie.title
         seatsLabel.text = ticket.seatCodes()
