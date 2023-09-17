@@ -279,7 +279,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="898"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVE-WU-DO7" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="765.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="685.66666666666663"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xm1-Mk-ZCG">
                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="430"/>
@@ -456,44 +456,43 @@
                                                     <constraint firstItem="YFL-VM-lIo" firstAttribute="trailing" secondItem="CWk-zG-irG" secondAttribute="trailing" id="yhJ-Q3-RW4"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-QR-IJS">
-                                                <rect key="frame" x="20" y="700.66666666666663" width="390" height="50"/>
-                                                <color key="backgroundColor" name="PrimaryColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="0LP-KH-21l"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Book Tickets">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="btnBookTickets_TUI:" destination="8S5-Ch-Psx" eventType="touchUpInside" id="RQf-aV-yds"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="xm1-Mk-ZCG" firstAttribute="leading" secondItem="LVE-WU-DO7" secondAttribute="leading" id="Hma-35-opd"/>
-                                            <constraint firstItem="LEr-QR-IJS" firstAttribute="top" secondItem="XD1-ke-ulD" secondAttribute="bottom" constant="14.999999999999886" id="IBf-vT-8OL"/>
-                                            <constraint firstAttribute="trailing" secondItem="LEr-QR-IJS" secondAttribute="trailing" constant="20" id="KaU-7t-YZl"/>
-                                            <constraint firstAttribute="bottom" secondItem="LEr-QR-IJS" secondAttribute="bottom" constant="15" id="Pvq-2S-vad"/>
                                             <constraint firstItem="XD1-ke-ulD" firstAttribute="leading" secondItem="xm1-Mk-ZCG" secondAttribute="leading" id="XtD-VG-Ysz"/>
-                                            <constraint firstItem="LEr-QR-IJS" firstAttribute="leading" secondItem="LVE-WU-DO7" secondAttribute="leading" constant="20" id="Yfo-ZW-twY"/>
                                             <constraint firstItem="xm1-Mk-ZCG" firstAttribute="top" secondItem="LVE-WU-DO7" secondAttribute="top" id="a0r-Ys-WhP"/>
                                             <constraint firstAttribute="trailing" secondItem="xm1-Mk-ZCG" secondAttribute="trailing" id="dNV-pT-MmC"/>
                                             <constraint firstItem="XD1-ke-ulD" firstAttribute="trailing" secondItem="xm1-Mk-ZCG" secondAttribute="trailing" id="jcH-gV-cfm"/>
+                                            <constraint firstAttribute="bottom" secondItem="XD1-ke-ulD" secondAttribute="bottom" id="nQZ-ig-LJL"/>
                                             <constraint firstItem="XD1-ke-ulD" firstAttribute="top" secondItem="xm1-Mk-ZCG" secondAttribute="bottom" id="uAk-FV-hln"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-QR-IJS">
+                                        <rect key="frame" x="20" y="833" width="390" height="50"/>
+                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0LP-KH-21l"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Book Tickets">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnBookTickets_TUI:" destination="8S5-Ch-Psx" eventType="touchUpInside" id="RQf-aV-yds"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="LVE-WU-DO7" secondAttribute="trailing" id="RDv-Pd-riM"/>
+                                    <constraint firstAttribute="trailing" secondItem="LEr-QR-IJS" secondAttribute="trailing" constant="20" id="b0D-e7-rOI"/>
+                                    <constraint firstItem="LEr-QR-IJS" firstAttribute="leading" secondItem="lAl-Ea-ecE" secondAttribute="leading" constant="20" id="cp2-gF-ZGl"/>
                                     <constraint firstItem="LVE-WU-DO7" firstAttribute="top" secondItem="lAl-Ea-ecE" secondAttribute="top" id="eUs-3P-BB0"/>
                                     <constraint firstAttribute="bottom" secondItem="LVE-WU-DO7" secondAttribute="bottom" id="iLi-3J-Jth"/>
                                     <constraint firstItem="LVE-WU-DO7" firstAttribute="leading" secondItem="lAl-Ea-ecE" secondAttribute="leading" id="suu-PY-ey3"/>
@@ -509,6 +508,7 @@
                             <constraint firstAttribute="top" secondItem="lAl-Ea-ecE" secondAttribute="top" id="5Ht-Go-NAl"/>
                             <constraint firstAttribute="trailing" secondItem="lAl-Ea-ecE" secondAttribute="trailing" id="Epe-CM-pzs"/>
                             <constraint firstItem="2Vj-gJ-iMV" firstAttribute="bottom" secondItem="lAl-Ea-ecE" secondAttribute="bottom" id="NUn-Ed-ndM"/>
+                            <constraint firstItem="2Vj-gJ-iMV" firstAttribute="bottom" secondItem="LEr-QR-IJS" secondAttribute="bottom" constant="15" id="SjJ-m1-hgd"/>
                             <constraint firstItem="lAl-Ea-ecE" firstAttribute="leading" secondItem="wgX-WR-DDS" secondAttribute="leading" id="bQk-24-VhK"/>
                         </constraints>
                     </view>
