@@ -38,7 +38,8 @@ Storyboard |
 
 ## Video
 
-[](https://user-images.githubusercontent.com//83721234/2c10fe20-e376-494a-a756-3d99a9de66c2.mp4)
+https://github.com/recepsenoglu/MovieTicketBookingApp/assets/83721234/40239a68-66c0-459d-9a99-8ef8f69c3052
+
 
 ## License
 
