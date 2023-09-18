@@ -14,13 +14,16 @@ enum Genre: String {
     case Drama
     case Fantasy
     case Horror
-    case Mistery
+    case Mystery
     case Romance
     case Thriller
     case Crime
     case SciFi = "Sci-Fi"
     case Musical
     case Biography
+    case History
+    case Adventure
+    case Animation
 }
 
 enum ContentRating: String {
@@ -44,7 +47,7 @@ struct Movie {
     var star: Int
     
     init(
-        imageAssetName image: String,
+        image imageAssetName: String,
         title: String,
         filmReview: String,
         releaseDate: Date,
@@ -55,7 +58,7 @@ struct Movie {
         cast: [String],
         star: Int
     ) {
-        self.image = UIImage(named: image) ?? UIImage(systemName: "photo")!
+        self.image = UIImage(named: imageAssetName) ?? UIImage(systemName: "photo")!
         self.title = title
         self.filmReview = filmReview
         self.releaseDate = releaseDate

@@ -36,9 +36,9 @@ final class OnboardingVC: UIViewController {
     // MARK: - Functions
     
     private func loadSlides() {
-        let slide0 = OnboardingSlide(image: "Onboarding0", title: "Easy Ticket Booking", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sodales ante. Morbi venenatis elit sit amet facilisis molestie. Nam accumsan urna lorem, vitae ornare lectus eleifend ac.")
-        let slide1 = OnboardingSlide(image: "Onboarding1", title: "Online Payment", text: slide0.text)
-        let slide2 = OnboardingSlide(image: "Onboarding2", title: "Enjoy Watching!", text: slide0.text)
+        let slide0 = OnboardingSlide(image: "Onboarding0", title: "Easy Ticket Booking", text: "Discover the effortless way to secure your movie tickets with just a few taps. Our user-friendly interface makes booking tickets a breeze, ensuring you spend less time in queues and more time enjoying your favorite films.")
+        let slide1 = OnboardingSlide(image: "Onboarding1", title: "Online Payment", text: "Say goodbye to cash and hassle. With our secure online payment system, you can easily purchase tickets from the comfort of your device. Enjoy the convenience of digital transactions and worry less about carrying physical money.")
+        let slide2 = OnboardingSlide(image: "Onboarding2", title: "Enjoy Watching!", text: "Get ready to immerse yourself in the world of cinema like never before. Once you've booked your tickets and made your payment, all that's left to do is sit back, relax, and savor the magic of the big screen. It's time to enjoy the show!")
         slides.append(contentsOf: [slide0, slide1, slide2])
     }
     
