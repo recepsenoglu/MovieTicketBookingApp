@@ -38,17 +38,7 @@ Storyboard |
 
 ## Video
 
-
-## Installation
-
-Movie Ticket Booking Application requires [Cocoapods](https://cocoapods.org/) to run. 
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-cd MovieTicketBooking
-pod install
-```
+https://github.com/recepsenoglu/MovieTicketBookingApp/assets/83721234/2c10fe20-e376-494a-a756-3d99a9de66c2
 
 ## License
 
